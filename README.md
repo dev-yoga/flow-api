@@ -5,6 +5,8 @@ To Do:
 
 1. CUD for Sequences
     - C done
-    - Bug: get by sequence id returns "name": "this is a sequence"
+    - Updated Get route
+    - R done
+    - D happening
 2. User Auth Routes
 3. Search endpoint

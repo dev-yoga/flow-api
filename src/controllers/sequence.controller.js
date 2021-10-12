@@ -47,3 +47,14 @@ export async function updateSequenceHandler(req, res) {
 }
 
 // Delete
+
+export async function deleteSequenceHandler(req, res) {
+    const sequenceId = get(req, 'params.sequenceId');
+    const sequence = await Sequence.findByIdAndDelete(sequenceId);
+
+    if (!sequence) {
+        return res.sendStatus(404);
+    }
+
+    return res.sendStatus(200);
+}

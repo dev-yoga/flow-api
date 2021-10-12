@@ -1,5 +1,5 @@
 import { updatePoseHandler, createPoseHandler, getPoseHandler, listPoseHandler, deletePoseHandler } from './controllers/pose.controller.js';
-import { createSequenceHandler, getSequenceHandler, listSequenceHandler, updateSequenceHandler } from './controllers/sequence.controller.js';
+import { createSequenceHandler, deleteSequenceHandler, getSequenceHandler, listSequenceHandler, updateSequenceHandler } from './controllers/sequence.controller.js';
 
 export default function(app) {
     app.get('/healthcheck', (req, res) => res.sendStatus(200));
@@ -12,5 +12,6 @@ export default function(app) {
     app.get('/api/sequence', listSequenceHandler);
     app.post('/api/sequence', createSequenceHandler);
     app.put('/api/sequence/:sequenceId', updateSequenceHandler);
+    app.delete('/api/sequence/:sequenceId', deleteSequenceHandler);
 }
 
