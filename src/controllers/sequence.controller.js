@@ -1,4 +1,8 @@
+
+import lodash from 'lodash';
 import Sequence from '../models/sequence.js';
+
+const { get } = lodash;
 
 // read / GET
 export function getSequenceHandler(req, res) {
@@ -21,3 +25,21 @@ export async function createSequenceHandler(req, res) {
     return res.sendStatus(201);
 }
 
+// Update
+
+export async function updateSequenceHandler(req, res) {
+    const sequenceId = get(req, 'params.sequenceId');
+    const update = req.body;
+
+    const sequence = await Sequence.findById(sequenceId);
+
+    if (!sequence) {
+        return res.sendStatus(404);
+    }
+
+    const updatedSequence = await Sequence.findOneAndUpdate({ sequenceId }, update, { new:true });
+
+    return res.send(updatedSequence);
+}
+
+// Delete
