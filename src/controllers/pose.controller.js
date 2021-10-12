@@ -18,7 +18,7 @@ export async function getPoseHandler(req, res) {
     if (!pose) {
         return res.sendStatus(404);
     }
-    
+
     return res.send(pose);
 }
 
