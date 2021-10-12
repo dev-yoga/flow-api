@@ -5,10 +5,14 @@ import Sequence from '../models/sequence.js';
 const { get } = lodash;
 
 // read / GET
-export function getSequenceHandler(req, res) {
-    const sequence = { 
-        name: 'this is a sequence'
-    };
+export async function getSequenceHandler(req, res) {
+    const sequenceId = get(req, 'params.sequenceId');
+    const sequence = await Sequence.findById(sequenceId);
+
+    if (!sequence) {
+        return res.sendStatus(404);
+    }
+
     return res.send(sequence);
 }
 
