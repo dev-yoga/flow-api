@@ -23,7 +23,7 @@ export async function getPoseHandler(req, res) {
 }
 
 export async function listPoseHandler(req, res) {
-    const poses = await Pose.find({});
+    const poses = await Pose.find({});/* .populate('poses')*/
     return res.send(poses);
 }
 
