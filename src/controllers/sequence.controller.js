@@ -21,6 +21,3 @@ export async function createSequenceHandler(req, res) {
     return res.sendStatus(201);
 }
 
-
-//Need the CUD
-//passing an array of object ids for the pose not actual pose
