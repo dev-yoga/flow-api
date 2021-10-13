@@ -56,3 +56,12 @@ export async function deletePoseHandler(req, res) {
 
     return res.sendStatus(200);
 }
+
+export async function searchPoseHandler(req, res) {
+    const terms = get(req, 'params.terms');
+    const posts = await Pose.find({ $or: [
+        { name : { $regex: terms, '$options': 'i' } },
+        { sanskrit : { $regex: terms, '$options': 'i' } },
+    ] });
+    return res.send(posts);
+}

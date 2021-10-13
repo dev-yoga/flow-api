@@ -1,4 +1,4 @@
-import { updatePoseHandler, createPoseHandler, getPoseHandler, listPoseHandler, deletePoseHandler } from './controllers/pose.controller.js';
+import { searchPoseHandler, updatePoseHandler, createPoseHandler, getPoseHandler, listPoseHandler, deletePoseHandler } from './controllers/pose.controller.js';
 import { createSequenceHandler, deleteSequenceHandler, getSequenceHandler, listSequenceHandler, updateSequenceHandler } from './controllers/sequence.controller.js';
 
 export default function(app) {
@@ -13,5 +13,6 @@ export default function(app) {
     app.post('/api/sequence', createSequenceHandler);
     app.put('/api/sequence/:sequenceId', updateSequenceHandler);
     app.delete('/api/sequence/:sequenceId', deleteSequenceHandler);
+    app.get('/api/pose/search/:terms', searchPoseHandler);
 }
 

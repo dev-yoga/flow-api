@@ -3,10 +3,10 @@
 
 To Do:
 
-1. CUD for Sequences
+1. CRUD for Sequences
     - C done
-    - Updated Get route
+    - U done
     - R done
-    - D happening
+    - D done
 2. User Auth Routes
 3. Search endpoint
