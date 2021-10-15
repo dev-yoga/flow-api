@@ -9,4 +9,5 @@ To Do:
     - R done
     - D done
 2. User Auth Routes
-3. Search endpoint
+3. Search Endpoint
+    - Done
