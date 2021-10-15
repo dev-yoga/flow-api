@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-const port = process.API_PORT;
-const host = process.API_HOST;
+const port = process.env.port;
+const host = process.env.host;
 app.listen(port, host, () => {
     connect();
     routes(app);

@@ -4,8 +4,8 @@ import { signUp, signIn } from './controllers/user.controller.js';
 
 export default function(app) {
     app.get('/healthcheck', (req, res) => res.sendStatus(200));
-    app.post('/signup', signUp);
-    app.post('/signin', signIn);
+    app.post('/api/signup', signUp);
+    app.post('/api/signin', signIn);
     app.get('/api/pose/:poseId', getPoseHandler);
     app.post('/api/pose', createPoseHandler);
     app.get('/api/pose/', listPoseHandler);
