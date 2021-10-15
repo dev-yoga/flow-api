@@ -41,7 +41,7 @@ export async function signIn(req, res) {
 
             const secret = process.env.JWT_SECRET;
             const token = sign(user.toJSON(), secret);
-            res.json({success: true, token: 'JWT ' + token, user_id: user._id });
+            res.json({success: true, token: token, user_id: user._id });
         });
     });
 }
