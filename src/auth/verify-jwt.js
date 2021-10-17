@@ -4,7 +4,7 @@ export default function verifyJwt() {
     const { Strategy, ExtractJwt } = passwordJwt;
     var opts = {
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-        secretOrKey: 'itsasecret'
+        secretOrKey: 'itsasecret',
     };
 
     return new Strategy(opts, (jwt_payload, done) => {

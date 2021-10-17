@@ -1,13 +1,11 @@
 ##### flow
 ##### a yoga sequencing app
 
-To Do:
 
-1. CRUD for Sequences
-    - C done
-    - U done
-    - R done
-    - D done
-2. User Auth Routes
-3. Search Endpoint
-    - Done
+Sequence
+- Creat Sequence by User
+- Get List by User
+- Get specific sequence by User + sequence id
+- Update by User
+- Delete by User
+
