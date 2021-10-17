@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { searchPoseHandler, updatePoseHandler, createPoseHandler, getPoseHandler, listPoseHandler, deletePoseHandler } from './controllers/pose.controller.js';
-import { createSequenceHandler, deleteSequenceHandler, getSequenceHandler, listSequenceHandler, updateSequenceHandler } from './controllers/sequence.controller.js';
+import { userSequenceHandler, createSequenceHandler, deleteSequenceHandler, getSequenceHandler, listSequenceHandler, updateSequenceHandler } from './controllers/sequence.controller.js';
 import { signUp, signIn } from './controllers/user.controller.js';
 
 export default function(app) {
@@ -18,6 +18,7 @@ export default function(app) {
     app.put('/api/sequence/:sequenceId', passport.authenticate('jwt', { session: false }), updateSequenceHandler);
     app.delete('/api/sequence/:sequenceId', passport.authenticate('jwt', { session: false }), deleteSequenceHandler);
     app.get('/api/pose/search/:terms', passport.authenticate('jwt', { session: false }), searchPoseHandler);
+    app.get('/api/sequence/user/:user', passport.authenticate('jwt', { session: false }), userSequenceHandler);
 
 }
 

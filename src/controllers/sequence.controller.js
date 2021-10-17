@@ -58,3 +58,16 @@ export async function deleteSequenceHandler(req, res) {
 
     return res.sendStatus(200);
 }
+
+// GET sequences by user
+
+
+export async function userSequenceHandler(req, res) {
+    const user = get(req, 'params.user');
+    const sequence = await Sequence.find({ user: user });
+    
+    if (!sequence) {
+        return res.sendStatus(404);
+    }
+    return res.send(sequence);
+}
